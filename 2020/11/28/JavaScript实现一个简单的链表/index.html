@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   
-  <title>单例设计模式是个什么东西？ | 清风揽月的Blog</title>
+  <title>JavaScript实现一个简单的链表 | 清风揽月的Blog</title>
   
   
 
@@ -304,8 +304,8 @@
         
   
     <h1 class="title">
-      <a href="/2020/03/18/%E5%8D%95%E4%BE%8B%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E6%98%AF%E4%B8%AA%E4%BB%80%E4%B9%88%E4%B8%9C%E8%A5%BF/">
-        单例设计模式是个什么东西？
+      <a href="/2020/11/28/JavaScript%E5%AE%9E%E7%8E%B0%E4%B8%80%E4%B8%AA%E7%AE%80%E5%8D%95%E7%9A%84%E9%93%BE%E8%A1%A8/">
+        JavaScript实现一个简单的链表
       </a>
     </h1>
   
@@ -341,17 +341,17 @@
             <div class="new-meta-item date">
   <a class='notlink'>
     <i class="fas fa-edit" aria-hidden="true"></i>
-    <p>发布于：2020年3月18日</p>
+    <p>发布于：2020年11月28日</p>
   </a>
 </div>
 
           
         
           
-            <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-02-14T19:22:16+08:00">
+            <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-02-18T15:11:18+08:00">
   <a class='notlink'>
     <i class="fas fa-save" aria-hidden="true"></i>
-    <p>更新于：2021年2月14日</p>
+    <p>更新于：2021年2月18日</p>
   </a>
 </div>
 
@@ -365,18 +365,7 @@
       
         <a class="-mob-share-qq" title="QQ好友" rel="external nofollow noopener noreferrer"
           
-          href="http://connect.qq.com/widget/shareqq/index.html?url=https://houyang99.github.io/2020/03/18/%E5%8D%95%E4%BE%8B%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E6%98%AF%E4%B8%AA%E4%BB%80%E4%B9%88%E4%B8%9C%E8%A5%BF/&title=单例设计模式是个什么东西？ | 清风揽月的Blog&summary=
-在学习Java的过程中，各种设计模式便扑面而来，笔者目前便接触到了单例设计模式，与之对应的还有多例设计模式。下面便奉上个人的领悟（笔者也只是个初入Java的学习者，如有错误也是在所难免的）。
-
-什么是单例设计模式单例设计模式，重点就在这个”单“上，指的是一个类只能实例化一个对象。
-假设现在有一个Singleton类：
-123456class Singleton &#123;    public Singleton() &#123;&#125;;    public void hello() &#123;        System.out.println("Hello !");    &#125;&#125;
-
-一般情况下，我们都是直接通过new关键字来获得一个实例化对象
-1Singleton s = new Singleton();
-
-可是如果能够new出一个实例化对象，那么一定可以再new出更多的实例化对象，显然是不符合单例设计模式的要求的。因此我们需要将类的设计做一些改变，使之不能被直接new出来，所以我们将类的构造方法设为私有化的，即为：
-1private Singleton() &#123;&#125;;"
+          href="http://connect.qq.com/widget/shareqq/index.html?url=https://houyang99.github.io/2020/11/28/JavaScript%E5%AE%9E%E7%8E%B0%E4%B8%80%E4%B8%AA%E7%AE%80%E5%8D%95%E7%9A%84%E9%93%BE%E8%A1%A8/&title=JavaScript实现一个简单的链表 | 清风揽月的Blog&summary="
           
           >
           
@@ -388,18 +377,7 @@
       
         <a class="-mob-share-qzone" title="QQ空间" rel="external nofollow noopener noreferrer"
           
-          href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://houyang99.github.io/2020/03/18/%E5%8D%95%E4%BE%8B%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E6%98%AF%E4%B8%AA%E4%BB%80%E4%B9%88%E4%B8%9C%E8%A5%BF/&title=单例设计模式是个什么东西？ | 清风揽月的Blog&summary=
-在学习Java的过程中，各种设计模式便扑面而来，笔者目前便接触到了单例设计模式，与之对应的还有多例设计模式。下面便奉上个人的领悟（笔者也只是个初入Java的学习者，如有错误也是在所难免的）。
-
-什么是单例设计模式单例设计模式，重点就在这个”单“上，指的是一个类只能实例化一个对象。
-假设现在有一个Singleton类：
-123456class Singleton &#123;    public Singleton() &#123;&#125;;    public void hello() &#123;        System.out.println("Hello !");    &#125;&#125;
-
-一般情况下，我们都是直接通过new关键字来获得一个实例化对象
-1Singleton s = new Singleton();
-
-可是如果能够new出一个实例化对象，那么一定可以再new出更多的实例化对象，显然是不符合单例设计模式的要求的。因此我们需要将类的设计做一些改变，使之不能被直接new出来，所以我们将类的构造方法设为私有化的，即为：
-1private Singleton() &#123;&#125;;"
+          href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://houyang99.github.io/2020/11/28/JavaScript%E5%AE%9E%E7%8E%B0%E4%B8%80%E4%B8%AA%E7%AE%80%E5%8D%95%E7%9A%84%E9%93%BE%E8%A1%A8/&title=JavaScript实现一个简单的链表 | 清风揽月的Blog&summary="
           
           >
           
@@ -411,18 +389,7 @@
       
         <a class="-mob-share-weibo" title="微博" rel="external nofollow noopener noreferrer"
           
-          href="http://service.weibo.com/share/share.php?url=https://houyang99.github.io/2020/03/18/%E5%8D%95%E4%BE%8B%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E6%98%AF%E4%B8%AA%E4%BB%80%E4%B9%88%E4%B8%9C%E8%A5%BF/&title=单例设计模式是个什么东西？ | 清风揽月的Blog&summary=
-在学习Java的过程中，各种设计模式便扑面而来，笔者目前便接触到了单例设计模式，与之对应的还有多例设计模式。下面便奉上个人的领悟（笔者也只是个初入Java的学习者，如有错误也是在所难免的）。
-
-什么是单例设计模式单例设计模式，重点就在这个”单“上，指的是一个类只能实例化一个对象。
-假设现在有一个Singleton类：
-123456class Singleton &#123;    public Singleton() &#123;&#125;;    public void hello() &#123;        System.out.println("Hello !");    &#125;&#125;
-
-一般情况下，我们都是直接通过new关键字来获得一个实例化对象
-1Singleton s = new Singleton();
-
-可是如果能够new出一个实例化对象，那么一定可以再new出更多的实例化对象，显然是不符合单例设计模式的要求的。因此我们需要将类的设计做一些改变，使之不能被直接new出来，所以我们将类的构造方法设为私有化的，即为：
-1private Singleton() &#123;&#125;;"
+          href="http://service.weibo.com/share/share.php?url=https://houyang99.github.io/2020/11/28/JavaScript%E5%AE%9E%E7%8E%B0%E4%B8%80%E4%B8%AA%E7%AE%80%E5%8D%95%E7%9A%84%E9%93%BE%E8%A1%A8/&title=JavaScript实现一个简单的链表 | 清风揽月的Blog&summary="
           
           >
           
@@ -454,42 +421,75 @@
       <section class="article typo">
         <div class="article-entry" itemprop="articleBody">
           
-          <blockquote>
-<p>在学习Java的过程中，各种设计模式便扑面而来，笔者目前便接触到了单例设计模式，与之对应的还有多例设计模式。下面便奉上个人的领悟（笔者也只是个初入Java的学习者，如有错误也是在所难免的）。</p>
+          <h2 id="什么是链表"><a href="#什么是链表" class="headerlink" title="什么是链表"></a>什么是链表</h2><p>在目前编译性的语言中，（如 C、Java），都提供了基本的数组，但是基本的数组的长度是不可变的（Java当中有Map，Set之类的集合可以实现可变数组）</p>
+<p>加入此时我们需要自己定义一个数据结构，需要它可变，那么，链表必将是我们学习编程的必须要了解的一种数据结构。</p>
+<blockquote>
+<p>链表由一个一个的节点相关联，组成了一串数据链，每个节点中包含当前节点的数据以及指向了下一个节点的地址引用。</p>
 </blockquote>
-<h3 id="什么是单例设计模式"><a href="#什么是单例设计模式" class="headerlink" title="什么是单例设计模式"></a>什么是单例设计模式</h3><p>单例设计模式，重点就在这个”单“上，指的是一个类只能实例化一个对象。</p>
-<p>假设现在有一个Singleton类：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Singleton</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Singleton</span><span class="params">()</span> </span>&#123;&#125;;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">hello</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"Hello !"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="JS实现单向链表"><a href="#JS实现单向链表" class="headerlink" title="JS实现单向链表"></a>JS实现单向链表</h2><blockquote>
+<p>我们来分析一下链表，链表由一个一个的节点组成一串数据链，每个节点包含有当前节点的数据和下一个节点的引用，所以，我们先定义一个Node类：</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Node</span> </span>&#123;</span><br><span class="line">    <span class="keyword">constructor</span>(item) &#123;</span><br><span class="line">        <span class="keyword">this</span>.data = item</span><br><span class="line">        <span class="keyword">this</span>.next = <span class="literal">null</span></span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 这里在Node节点类里添加add()是希望由Node类来实现具体的添加</span></span><br><span class="line">    add(item) &#123;</span><br><span class="line">        <span class="keyword">if</span> (<span class="keyword">this</span>.next === <span class="literal">null</span>) &#123;</span><br><span class="line">            <span class="keyword">this</span>.next = <span class="keyword">new</span> Node(item)</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="keyword">this</span>.next.add(item)</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p>一般情况下，我们都是直接通过new关键字来获得一个实例化对象</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Singleton s = <span class="keyword">new</span> Singleton();</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>初次之外，还需要一个用来管理链表的类：</p>
+<p>链表应该有一个根节点，所以构造函数里添加head属性，用来保存根节点</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Linked</span> </span>&#123;</span><br><span class="line">    <span class="keyword">constructor</span>() &#123;</span><br><span class="line">        <span class="keyword">this</span>.head = <span class="literal">null</span></span><br><span class="line">        <span class="keyword">this</span>.length = <span class="number">0</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p>可是如果能够new出一个实例化对象，那么一定可以再new出更多的实例化对象，显然是不符合单例设计模式的要求的。因此我们需要将类的设计做一些改变，使之不能被直接new出来，所以我们将类的构造方法设为私有化的，即为：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">private</span> <span class="title">Singleton</span><span class="params">()</span> </span>&#123;&#125;;</span><br></pre></td></tr></table></figure>
 
-<a id="more"></a>
 
-<p>这还不够，我们还需要在类的内部提供一个static的属性以及方法，用于保存实例化之后的对象以及提供给外部获取此对象的方法。于是整个类的设计为：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Singleton</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> Singleton instance = <span class="keyword">new</span> Singleton();</span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="title">Singleton</span><span class="params">()</span> </span>&#123;&#125;;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> Singleton <span class="title">getInstance</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> instance;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">hello</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"Hello !"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>链表有了，但是链表应该包含的功能：</p>
+<ul>
+<li>add() 添加节点</li>
+<li>remove() 删除节点</li>
+<li>find() 查找节点</li>
+<li>insert() 插入节点</li>
+<li>update() 修改节点</li>
+<li>size() 返回链表长度</li>
+<li>show() 显示所有的节点</li>
+</ul>
+<h3 id="实现添加add"><a href="#实现添加add" class="headerlink" title="实现添加add()"></a>实现添加add()</h3><blockquote>
+<p>实现思路：如果根节点为null，则创建新的节点赋值给根节点，否则调用Node节点自己的add方法</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">add(item) &#123;</span><br><span class="line">    <span class="keyword">if</span> (<span class="keyword">this</span>.head == <span class="literal">null</span>) &#123; <span class="comment">// 如果根节点没有数据，则创建根节点</span></span><br><span class="line">        <span class="keyword">this</span>.head = <span class="keyword">new</span> Node(item)</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="keyword">this</span>.head.add(item)	<span class="comment">// 如果根节点有数据，则条用根节点对象的add()方法</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">this</span>.length++</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p>此时，我们尝试来new一下类</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Demo</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String args[])</span> </span>&#123;</span><br><span class="line">        Singleton s = <span class="keyword">new</span> Singleton();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="remove-和-prev"><a href="#remove-和-prev" class="headerlink" title="remove() 和 prev()"></a>remove() 和 prev()</h3><blockquote>
+<p>实现思路：删除某个节点就等于将要删除的节点的前一个节点的next指向要删除的next</p>
+</blockquote>
+<p><img src="/2020/11/28/JavaScript%E5%AE%9E%E7%8E%B0%E4%B8%80%E4%B8%AA%E7%AE%80%E5%8D%95%E7%9A%84%E9%93%BE%E8%A1%A8/1.png" alt="img"></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 返回item的上一个Node节点</span></span><br><span class="line">prev(item) &#123;</span><br><span class="line">    <span class="keyword">let</span> prevNode = <span class="literal">null</span></span><br><span class="line">    <span class="keyword">let</span> currNode = <span class="keyword">this</span>.head</span><br><span class="line">    <span class="keyword">while</span>(currNode !== <span class="literal">null</span>) &#123;</span><br><span class="line">        <span class="keyword">if</span> (currNode.data === item) &#123;</span><br><span class="line">            <span class="keyword">break</span></span><br><span class="line">        &#125;</span><br><span class="line">        prevNode = currNode</span><br><span class="line">        currNode = currNode.next</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (currNode === <span class="literal">null</span>) &#123;</span><br><span class="line">        <span class="keyword">throw</span> <span class="keyword">new</span> <span class="built_in">Error</span>(<span class="string">'Not Found: '</span> + item)</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> prevNode</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 前一个节点的next指向要删除的next，实现删除！</span></span><br><span class="line">remove(item) &#123;</span><br><span class="line">    <span class="keyword">let</span> prevNode = <span class="keyword">this</span>.prev(item)</span><br><span class="line">    prevNode.next = item.next</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p>使用javac命令编译以后，便直接报错：</p>
-<p><img src="/2020/03/18/%E5%8D%95%E4%BE%8B%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E6%98%AF%E4%B8%AA%E4%BB%80%E4%B9%88%E4%B8%9C%E8%A5%BF/1.jpg" alt="1"></p>
-<p>可以看到，现在是不能够通过new关键字来实例化一个对象了。我们应该通过类的静态方法获得类的实例</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Demo</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String args[])</span> </span>&#123;</span><br><span class="line">        Singleton s = Singleton.getInstance();</span><br><span class="line">        s.hello();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="find"><a href="#find" class="headerlink" title="find()"></a>find()</h3><blockquote>
+<p>由于已经实现了prev()，所以可以直接返回prev()返回的Node节点的next就可以了！</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">find(item) &#123;</span><br><span class="line">	<span class="keyword">return</span> <span class="keyword">this</span>.prev(item).next</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p>编译并执行</p>
-<p><img src="/2020/03/18/%E5%8D%95%E4%BE%8B%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E6%98%AF%E4%B8%AA%E4%BB%80%E4%B9%88%E4%B8%9C%E8%A5%BF/2.jpg" alt="2"></p>
-<p>可以看到，编译成功并且执行了方法hello()。</p>
-<p>到此，一个基本的单例设计模式便完成了，我们把上面这种实现方式也称为饿汉式。饿汉式在类加载时就会实例化对象，因此，在多线程的情况下，可能会出现同步问题。因此，还有一种方式称为懒汉式：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Singleton</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> Singleton instance = <span class="keyword">null</span>;</span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="title">Singleton</span><span class="params">()</span> </span>&#123;&#125;;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">synchronized</span> Singleton <span class="title">getInstance</span><span class="params">()</span> </span>&#123; <span class="comment">// 使用synchronized修饰方法使之同步</span></span><br><span class="line">        <span class="keyword">if</span>(instance == <span class="keyword">null</span>) &#123;</span><br><span class="line">            instance = <span class="keyword">new</span> Singleton();</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> instance;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">hello</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"Hello !"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="insert"><a href="#insert" class="headerlink" title="insert()"></a>insert()</h3><blockquote>
+<p>如何插入到指定No的之前？</p>
+<p>A B 两节点，将C插入到B之前，则可以将：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">C.next= B </span><br><span class="line">A.next = C</span><br></pre></td></tr></table></figure>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">insert(item, before) &#123;</span><br><span class="line">    <span class="keyword">let</span> prevNode = <span class="keyword">this</span>.prev(before)</span><br><span class="line">    <span class="keyword">let</span> newNode = <span class="keyword">new</span> Node(item)</span><br><span class="line">    newNode.next = prevNode.next</span><br><span class="line">    prevNode.next = newNode</span><br><span class="line">    <span class="keyword">this</span>.length++</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p>然而，synchronized修饰的方法在执行效率上通常较低，所以最好的办法是使用双重校验锁（DCL  double-checked locking）</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Singleton</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> Singleton instance = <span class="keyword">null</span>();</span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="title">Singleton</span><span class="params">()</span> </span>&#123;&#125;;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> Singleton <span class="title">getInstance</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(instance == <span class="keyword">null</span>) &#123;</span><br><span class="line">            <span class="keyword">synchronized</span>(Singleton<span class="class">.<span class="keyword">class</span>) </span>&#123;</span><br><span class="line">                <span class="keyword">if</span>(instance == <span class="keyword">null</span>) &#123;</span><br><span class="line">                    instance = <span class="keyword">new</span> Singleton();</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> instance;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">hello</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"Hello !"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="update"><a href="#update" class="headerlink" title="update()"></a>update()</h3><blockquote>
+<p>只需要找到需要更新的节点，将节点的data赋值为新的数据即可</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">update(oldItem, newItem) &#123;</span><br><span class="line">	<span class="keyword">this</span>.find(oldItem).data = newItem</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<h3 id="END"><a href="#END" class="headerlink" title="END!"></a>END!</h3>
+<h3 id="size"><a href="#size" class="headerlink" title="size()"></a>size()</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">size() &#123;</span><br><span class="line">	<span class="keyword">return</span> <span class="keyword">this</span>.length</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="show"><a href="#show" class="headerlink" title="show()"></a>show()</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">show() &#123;</span><br><span class="line">    <span class="keyword">let</span> currNode = <span class="keyword">this</span>.head</span><br><span class="line">    <span class="keyword">let</span> str = <span class="string">'[ '</span></span><br><span class="line">    <span class="keyword">while</span> (currNode) &#123;</span><br><span class="line">    str += currNode.data + <span class="string">' -&gt; '</span></span><br><span class="line">    currNode = currNode.next</span><br><span class="line">    &#125;</span><br><span class="line">    str += <span class="string">'null ]'</span></span><br><span class="line">    <span class="built_in">console</span>.log(str) </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="让我们来运行一下吧！"><a href="#让我们来运行一下吧！" class="headerlink" title="让我们来运行一下吧！"></a>让我们来运行一下吧！</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> list = <span class="keyword">new</span> Linked()</span><br><span class="line">list.add(<span class="string">'A'</span>)</span><br><span class="line">list.add(<span class="string">'B'</span>)</span><br><span class="line">list.add(<span class="string">'C'</span>)</span><br><span class="line">list.show()</span><br><span class="line">list.insert(<span class="string">'a'</span>, <span class="string">'B'</span>)</span><br><span class="line">list.show()</span><br><span class="line">list.update(<span class="string">'a'</span>,<span class="string">'Hello'</span>)</span><br><span class="line">list.show()</span><br><span class="line"><span class="built_in">console</span>.log(list.size())</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>结果：</p>
+</blockquote>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">PC:~/Desktop/js$ node Linked.js </span><br><span class="line">[ A -&gt; B -&gt; C -&gt; null ]</span><br><span class="line">[ A -&gt; a -&gt; B -&gt; C -&gt; null ]</span><br><span class="line">[ A -&gt; Hello -&gt; B -&gt; C -&gt; null ]</span><br><span class="line">4</span><br></pre></td></tr></table></figure>
+
+<h2 id="结束"><a href="#结束" class="headerlink" title="结束"></a>结束</h2><p>至此，一个简单的单向链表就完成了！</p>
+
           
         </div>
         
@@ -508,7 +508,7 @@
         
           
   
-  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/" rel="nofollow"><i class="fas fa-tag" aria-hidden="true"></i><p>学习记录</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/Java/" rel="nofollow"><i class="fas fa-tag" aria-hidden="true"></i><p>Java</p></a></div>
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/" rel="nofollow"><i class="fas fa-tag" aria-hidden="true"></i><p>学习记录</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/JavaScript/" rel="nofollow"><i class="fas fa-tag" aria-hidden="true"></i><p>JavaScript</p></a></div>
 
 
         
@@ -528,33 +528,14 @@
         
             <div class="prev-next">
                 
-                    <section class="prev">
-                        <span class="art-item-left">
-                            <h6><i class="fas fa-chevron-left" aria-hidden="true"></i>&nbsp;上一页</h6>
-                            <h4>
-                                <a href="/2020/07/17/%E6%97%A0%E9%99%90%E8%BF%9E%E8%BD%BD%E5%B0%8F%E8%AF%B4%E4%B9%8B%E5%A4%A7%E6%B0%B4%E6%AF%94/" rel="prev" title="无限连载小说之大水比">
-                                  
-                                      无限连载小说之大水比
-                                  
-                                </a>
-                            </h4>
-                            
-                                
-                                <h6 class="tags">
-                                    <a class="tag" href="/tags/%E5%96%9C%E9%97%BB%E4%B9%90%E8%A7%81/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> 喜闻乐见</a> <a class="tag" href="/tags/%E6%97%A5%E5%B8%B8%E6%B0%B4/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> 日常水</a>
-                                </h6>
-                            
-                        </span>
-                    </section>
-                
                 
                     <section class="next">
                         <span class="art-item-right" aria-hidden="true">
                             <h6>下一页&nbsp;<i class="fas fa-chevron-right" aria-hidden="true"></i></h6>
                             <h4>
-                                <a href="/2020/02/29/Java-IO-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E4%B8%8A/" rel="prev" title="Java I/O 学习笔记">
+                                <a href="/2020/08/09/%E5%BA%8F%E5%88%97%E5%8C%96%E4%B8%8E%E5%8F%8D%E5%BA%8F%E5%88%97%E5%8C%96%E7%AE%80%E5%8D%95%E6%A1%88%E4%BE%8B/" rel="prev" title="序列化与反序列化简单案例">
                                     
-                                        Java I/O 学习笔记
+                                        序列化与反序列化简单案例
                                     
                                 </a>
                             </h4>
@@ -592,7 +573,7 @@
 
   <script>
     window.subData = {
-      title: '单例设计模式是个什么东西？',
+      title: 'JavaScript实现一个简单的链表',
       tools: true
     }
   </script>
@@ -805,7 +786,7 @@
 
 
     <div class='content'>
-      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#什么是单例设计模式"><span class="toc-number">1.</span> <span class="toc-text">什么是单例设计模式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#END"><span class="toc-number">2.</span> <span class="toc-text">END!</span></a></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#什么是链表"><span class="toc-number">1.</span> <span class="toc-text">什么是链表</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#JS实现单向链表"><span class="toc-number">2.</span> <span class="toc-text">JS实现单向链表</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#实现添加add"><span class="toc-number">2.1.</span> <span class="toc-text">实现添加add()</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#remove-和-prev"><span class="toc-number">2.2.</span> <span class="toc-text">remove() 和 prev()</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#find"><span class="toc-number">2.3.</span> <span class="toc-text">find()</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#insert"><span class="toc-number">2.4.</span> <span class="toc-text">insert()</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#update"><span class="toc-number">2.5.</span> <span class="toc-text">update()</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#size"><span class="toc-number">2.6.</span> <span class="toc-text">size()</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#show"><span class="toc-number">2.7.</span> <span class="toc-text">show()</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#让我们来运行一下吧！"><span class="toc-number">3.</span> <span class="toc-text">让我们来运行一下吧！</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#结束"><span class="toc-number">4.</span> <span class="toc-text">结束</span></a></li></ol>
     </div>
   </section>
 

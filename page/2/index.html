@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   
-  <title>Archives: 2019/5 | 清风揽月的Blog</title>
+  <title>清风揽月的Blog</title>
   
   
 
@@ -56,7 +56,7 @@
 <body>
   
   <div class="cover-wrapper">
-    <cover class='cover  half'>
+    <cover class='cover  full'>
       
         
   <img class='logo' src='/img/headPortrait.jpg'/>
@@ -289,20 +289,9 @@
       
 
 <div class='l_main'>
-	
-		
+  
   <section class="post-list ">
     
-      
-        
-          
-        
-          
-        
-          
-        
-      
-    
     
       
         
@@ -318,8 +307,8 @@
       
         
   <h2 class="title">
-    <a href="/2019/05/13/2019-5-13-MySQL-procedure-function/">
-      MySQL 2019年5月13日 学习记录
+    <a href="/2019/04/14/Mooc-java-four/">
+      Mooc-零基础学Java语言（翁恺）第四周编程题
     </a>
   </h2>
 
@@ -344,7 +333,7 @@
             <div class="new-meta-item date">
   <a class='notlink'>
     <i class="fas fa-edit" aria-hidden="true"></i>
-    <p>发布于：2019年5月13日</p>
+    <p>发布于：2019年4月14日</p>
   </a>
 </div>
 
@@ -375,28 +364,25 @@
 
   <section class="article typo">
     <div class="article-entry" itemprop="articleBody">
-      <blockquote>
-<p>本周一，我们又学习了MySQL的存储过程和存储函数的创建和调用。</p>
-</blockquote>
-<h3 id="首先是存储过程"><a href="#首先是存储过程" class="headerlink" title="首先是存储过程"></a>首先是存储过程</h3><ul>
-<li>语法：</li>
-</ul>
-<p><img src="/2019/05/13/2019-5-13-MySQL-procedure-function/procedure.png" alt="procedure"></p>
-<ul>
-<li><p>小练习：</p>
-<p>  有一些数据：</p>
+      <p>不知从何时起，这网站我就没再管了，一直到这个星期周末…</p>
+<p>在寝室实在无聊，中午起来，便看到室友在学习了，嗯，我就是那样，只要旁边有人在学习，我自身的学习欲望就变得愈加变大，于是还是和之前一样，去了<a href="https://www.icourse163.org/" target="_blank" rel="noopener">中国大学Mooc</a>，专门来到了翁恺的课程，点开了其实已经看过了的Java基础课程，当然这是最新的一次开课，之前看完了以前的，但没开课就做不了题目（提交不了)所以便看了看题目：</p>
 <div align="center">
-  <table><tr><th>学号</th><th>姓名</th><th>性别</th><th>专业</th></tr><tr><td>1001</td><td>张三</td><td>男</td><td>计算机应用技术</td></tr><tr><td>1002</td><td>李四</td><td>男</td><td>计算机应用技术</td></tr><tr><td>2001</td><td>赵丽</td><td>女</td><td>多媒体技术</td></tr><tr><td>3001</td><td>王军</td><td>男</td><td>应用电子技术</td></tr><tr><td>4004</td><td>杨洋</td><td>男</td><td>楼宇智能化技术</td></tr><tr><td>5010</td><td>谢楠楠</td><td>女</td><td>计算机网络技术</td></tr></table>
+
+<p><img src="/2019/04/14/Mooc-java-four/1-1.png" alt="题目1"></p>
 </div>
 
-<p>  题目：创建一个存储过程，并求出表中指定专业的学生人数。</p>
-<p>  这里提前准备了数据</p>
-</li>
-</ul>
+<p>第四周编程题1</p>
+<p>首先是这个题，题目读了一遍便开始试着写了，第一次写的时候，便把需求搞错了，明明是第n个素数到第m个素数，却一气呵成的写成了n–m之间的素数，嗯，读题的时候还特意看了眼“注意”，却还是在写的时候“没按套路出牌” emmm……</p>
+<p>对于这个题目，我的思路是：</p>
+<p>因为第一个素数就是2，所以循环从2开始，以后每找到一个素数，计数器+1，当计数器 n ≤ count ≤ m 时，这个素数也必然就是我要找的数了</p>
+<p>代码如下：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.Scanner;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Main</span> </span>&#123;</span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">	题目内容：</span></span><br><span class="line"><span class="comment">	我们认为2是第一个素数，3是第二个素数，5是第三个素数，依次类推。</span></span><br><span class="line"><span class="comment">	现在，给定两个整数n和m，0&lt;n&lt;=m&lt;=200，你的程序要计算第n个素数到第m个素数之间所有的素数的和</span></span><br><span class="line"><span class="comment">	包括第n个素数和第m个素数。</span></span><br><span class="line"><span class="comment">	注意，是第n个素数到第m个素数之间的所有的素数，并不是n和m之间的所有的素数。</span></span><br><span class="line"><span class="comment">	输入格式:</span></span><br><span class="line"><span class="comment">	两个整数，第一个表示n，第二个表示m。</span></span><br><span class="line"><span class="comment">	输出格式：</span></span><br><span class="line"><span class="comment">	一个整数，表示第n个素数到第m个素数之间所有的素数的和，包括第n个素数和第m个素数。</span></span><br><span class="line"><span class="comment">	输入样例：</span></span><br><span class="line"><span class="comment">	2 4</span></span><br><span class="line"><span class="comment">	输出样例：</span></span><br><span class="line"><span class="comment">	15</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		Scanner in = <span class="keyword">new</span> Scanner(System.in);</span><br><span class="line">		<span class="keyword">int</span> m,n,sum = <span class="number">0</span>,count = <span class="number">0</span>;</span><br><span class="line">		n = in.nextInt();</span><br><span class="line">		m = in.nextInt();</span><br><span class="line">		</span><br><span class="line">		<span class="keyword">for</span>( <span class="keyword">int</span> i = <span class="number">2</span>;count&lt;=m; i++ ) &#123;</span><br><span class="line">			<span class="keyword">if</span>( isPrime(i) ) &#123;</span><br><span class="line">				count ++;</span><br><span class="line">				<span class="keyword">if</span>( count &gt;= n &amp;&amp; count &lt;= m ) &#123;</span><br><span class="line">					sum += i;</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">			</span><br><span class="line">		&#125;</span><br><span class="line">		System.out.println(sum);</span><br><span class="line"></span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">boolean</span> <span class="title">isPrime</span><span class="params">( <span class="keyword">int</span> num )</span> </span>&#123;</span><br><span class="line">		<span class="keyword">boolean</span> ret = <span class="keyword">false</span>;</span><br><span class="line">		<span class="keyword">int</span> i;</span><br><span class="line">		<span class="keyword">for</span>( i = <span class="number">2</span>; i &lt; num; i++ ) &#123;</span><br><span class="line">			<span class="keyword">if</span>( num%i == <span class="number">0</span>) &#123;</span><br><span class="line">				<span class="keyword">break</span>;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">if</span>( i == num ) &#123;</span><br><span class="line">			ret = <span class="keyword">true</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">return</span> ret;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line">	&#123;% endcodeblock %&#125;</span><br></pre></td></tr></table></figure>
+
+<p>结果：</p>
       
         
           <div class="button readmore">
-            <a href="/2019/05/13/2019-5-13-MySQL-procedure-function/" class="flat-box">
+            <a href="/2019/04/14/Mooc-java-four/" class="flat-box">
               <i class="fas fa-book-open fa-fw" aria-hidden="true"></i>
               阅读全文
             </a>
@@ -407,218 +393,9 @@
     <!-- 
       <div class="full-width auto-padding tags">
         
-          <a href="/tags/MySQL/" rel="nofollow"><i class="fas fa-tag fa-fw"></i> MySQL</a>
+          <a href="/tags/Java/" rel="nofollow"><i class="fas fa-tag fa-fw"></i> Java</a>
         
-          <a href="/tags/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/" rel="nofollow"><i class="fas fa-tag fa-fw"></i> 学习记录</a>
-        
-      </div>
-     -->
-  </section>
-</article>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <article class="post white-box   reveal ">
-  
-
-
-  <section class='meta'>
-    
-    
-    <div class="meta" id="header-meta">
-      
-        
-  <h2 class="title">
-    <a href="/2019/05/11/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87Blog/">
-      我的第一篇Hexo Blog
-    </a>
-  </h2>
-
-
-      
-      <div class='new-meta-box'>
-        
-          
-        
-          
-            
-<div class='new-meta-item author'>
-  <a href="https://houyang99.github.io" rel="nofollow">
-    <img src="/img/headPortrait.jpg">
-    <p>清风揽月</p>
-  </a>
-</div>
-
-          
-        
-          
-            <div class="new-meta-item date">
-  <a class='notlink'>
-    <i class="fas fa-edit" aria-hidden="true"></i>
-    <p>发布于：2019年5月11日</p>
-  </a>
-</div>
-
-          
-        
-          
-            <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-02-14T19:22:16+08:00">
-  <a class='notlink'>
-    <i class="fas fa-save" aria-hidden="true"></i>
-    <p>更新于：2021年2月14日</p>
-  </a>
-</div>
-
-          
-        
-          
-            
-
-          
-        
-      </div>
-      
-        <hr>
-      
-    </div>
-  </section>
-
-
-  <section class="article typo">
-    <div class="article-entry" itemprop="articleBody">
-      <blockquote>
-<p>今天，第一次将Hexo搭建起来了并且部署到了 <a href="(https://github.com)" title="Github">Github</a> 上，当时的心情，无疑是非常激动的……</p>
-</blockquote>
-<h2 id="第一章"><a href="#第一章" class="headerlink" title="第一章"></a>第一章</h2><hr>
-<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><hr>
-
-      
-    </div>
-    <!--  -->
-  </section>
-</article>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <article class="post white-box   reveal ">
-  
-
-
-  <section class='meta'>
-    
-    
-    <div class="meta" id="header-meta">
-      
-        
-  <h2 class="title">
-    <a href="/2019/05/09/MySQL-trigger/">
-      MySQL数据库-触发器小练习
-    </a>
-  </h2>
-
-
-      
-      <div class='new-meta-box'>
-        
-          
-        
-          
-            
-<div class='new-meta-item author'>
-  <a href="https://houyang99.github.io" rel="nofollow">
-    <img src="/img/headPortrait.jpg">
-    <p>清风揽月</p>
-  </a>
-</div>
-
-          
-        
-          
-            <div class="new-meta-item date">
-  <a class='notlink'>
-    <i class="fas fa-edit" aria-hidden="true"></i>
-    <p>发布于：2019年5月9日</p>
-  </a>
-</div>
-
-          
-        
-          
-            <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-02-14T19:22:16+08:00">
-  <a class='notlink'>
-    <i class="fas fa-save" aria-hidden="true"></i>
-    <p>更新于：2021年2月14日</p>
-  </a>
-</div>
-
-          
-        
-          
-            
-
-          
-        
-      </div>
-      
-        <hr>
-      
-    </div>
-  </section>
-
-
-  <section class="article typo">
-    <div class="article-entry" itemprop="articleBody">
-      <p>本周，数据库上到了触发器（已经上完了），于是老师想我们分享了他之前的一篇小论文，讲的是触发器在商城里的应用—利用触发器来模拟用户在进行下单、修改订单、退货操作之后相关商品信息的变化。</p>
-<hr>
-<p>首先，让我们来假设一下：现在我们有一些商品，如表</p>
-<table>
-<thead>
-<tr>
-<th align="center">商品编号（Product id）</th>
-<th align="center">商品名称（Product name）</th>
-<th align="center">数量（Number）</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">1</td>
-<td align="center">单反</td>
-<td align="center">30</td>
-</tr>
-<tr>
-<td align="center">2</td>
-<td align="center">自行车</td>
-<td align="center">20</td>
-</tr>
-<tr>
-<td align="center">3</td>
-<td align="center">笔记本</td>
-<td align="center">15</td>
-</tr>
-</tbody></table>
-<p>下面，就开始将结构在数据库中搭建起来吧！</p>
-      
-        
-          <div class="button readmore">
-            <a href="/2019/05/09/MySQL-trigger/" class="flat-box">
-              <i class="fas fa-book-open fa-fw" aria-hidden="true"></i>
-              阅读全文
-            </a>
-          </div>
-        
-      
-    </div>
-    <!-- 
-      <div class="full-width auto-padding tags">
-        
-          <a href="/tags/MySQL/" rel="nofollow"><i class="fas fa-tag fa-fw"></i> MySQL</a>
-        
-          <a href="/tags/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/" rel="nofollow"><i class="fas fa-tag fa-fw"></i> 学习记录</a>
+          <a href="/tags/Mooc/" rel="nofollow"><i class="fas fa-tag fa-fw"></i> Mooc</a>
         
       </div>
      -->
@@ -631,6 +408,21 @@
     
   </section>
   
+    
+      <br>
+      <div class="prev-next">
+        
+          <a class="prev" rel="prev" href="/">
+            <section class="post prev white-box  widget-blur" >
+              <i class="fas fa-chevron-left" aria-hidden="true"></i>&nbsp;上一页&nbsp;
+            </section>
+          </a>
+        
+        <p class="current">
+          2 / 2
+        </p>
+        
+      </div>
     
     <!-- 根据主题中的设置决定是否在archive中针对摘要部分的MathJax公式加载mathjax.js文件 -->
     
@@ -639,7 +431,6 @@
   
 
 
-	
 </div>
 <aside class='l_side'>
   
@@ -893,14 +684,6 @@
   
 </footer>
 <script>setLoadingBarProgress(80);</script>
-
-
-
-
-	<!-- 根据主题中的设置决定是否在archive中针对摘要部分的MathJax公式加载mathjax.js文件 -->
-	
-
-	
 
 
       <script>setLoadingBarProgress(60);</script>

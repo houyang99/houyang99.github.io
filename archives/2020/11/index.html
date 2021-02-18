@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   
-  <title>Archives: 2019/5 | 清风揽月的Blog</title>
+  <title>Archives: 2020/11 | 清风揽月的Blog</title>
   
   
 
@@ -297,10 +297,6 @@
         
           
         
-          
-        
-          
-        
       
     
     
@@ -318,8 +314,8 @@
       
         
   <h2 class="title">
-    <a href="/2019/05/13/2019-5-13-MySQL-procedure-function/">
-      MySQL 2019年5月13日 学习记录
+    <a href="/2020/11/28/JavaScript%E5%AE%9E%E7%8E%B0%E4%B8%80%E4%B8%AA%E7%AE%80%E5%8D%95%E7%9A%84%E9%93%BE%E8%A1%A8/">
+      JavaScript实现一个简单的链表
     </a>
   </h2>
 
@@ -344,17 +340,17 @@
             <div class="new-meta-item date">
   <a class='notlink'>
     <i class="fas fa-edit" aria-hidden="true"></i>
-    <p>发布于：2019年5月13日</p>
+    <p>发布于：2020年11月28日</p>
   </a>
 </div>
 
           
         
           
-            <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-02-14T19:22:16+08:00">
+            <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-02-18T15:11:18+08:00">
   <a class='notlink'>
     <i class="fas fa-save" aria-hidden="true"></i>
-    <p>更新于：2021年2月14日</p>
+    <p>更新于：2021年2月18日</p>
   </a>
 </div>
 
@@ -375,250 +371,83 @@
 
   <section class="article typo">
     <div class="article-entry" itemprop="articleBody">
-      <blockquote>
-<p>本周一，我们又学习了MySQL的存储过程和存储函数的创建和调用。</p>
+      <h2 id="什么是链表"><a href="#什么是链表" class="headerlink" title="什么是链表"></a>什么是链表</h2><p>在目前编译性的语言中，（如 C、Java），都提供了基本的数组，但是基本的数组的长度是不可变的（Java当中有Map，Set之类的集合可以实现可变数组）</p>
+<p>加入此时我们需要自己定义一个数据结构，需要它可变，那么，链表必将是我们学习编程的必须要了解的一种数据结构。</p>
+<blockquote>
+<p>链表由一个一个的节点相关联，组成了一串数据链，每个节点中包含当前节点的数据以及指向了下一个节点的地址引用。</p>
 </blockquote>
-<h3 id="首先是存储过程"><a href="#首先是存储过程" class="headerlink" title="首先是存储过程"></a>首先是存储过程</h3><ul>
-<li>语法：</li>
-</ul>
-<p><img src="/2019/05/13/2019-5-13-MySQL-procedure-function/procedure.png" alt="procedure"></p>
+<h2 id="JS实现单向链表"><a href="#JS实现单向链表" class="headerlink" title="JS实现单向链表"></a>JS实现单向链表</h2><blockquote>
+<p>我们来分析一下链表，链表由一个一个的节点组成一串数据链，每个节点包含有当前节点的数据和下一个节点的引用，所以，我们先定义一个Node类：</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Node</span> </span>&#123;</span><br><span class="line">    <span class="keyword">constructor</span>(item) &#123;</span><br><span class="line">        <span class="keyword">this</span>.data = item</span><br><span class="line">        <span class="keyword">this</span>.next = <span class="literal">null</span></span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 这里在Node节点类里添加add()是希望由Node类来实现具体的添加</span></span><br><span class="line">    add(item) &#123;</span><br><span class="line">        <span class="keyword">if</span> (<span class="keyword">this</span>.next === <span class="literal">null</span>) &#123;</span><br><span class="line">            <span class="keyword">this</span>.next = <span class="keyword">new</span> Node(item)</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="keyword">this</span>.next.add(item)</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>初次之外，还需要一个用来管理链表的类：</p>
+<p>链表应该有一个根节点，所以构造函数里添加head属性，用来保存根节点</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Linked</span> </span>&#123;</span><br><span class="line">    <span class="keyword">constructor</span>() &#123;</span><br><span class="line">        <span class="keyword">this</span>.head = <span class="literal">null</span></span><br><span class="line">        <span class="keyword">this</span>.length = <span class="number">0</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>链表有了，但是链表应该包含的功能：</p>
 <ul>
-<li><p>小练习：</p>
-<p>  有一些数据：</p>
-<div align="center">
-  <table><tr><th>学号</th><th>姓名</th><th>性别</th><th>专业</th></tr><tr><td>1001</td><td>张三</td><td>男</td><td>计算机应用技术</td></tr><tr><td>1002</td><td>李四</td><td>男</td><td>计算机应用技术</td></tr><tr><td>2001</td><td>赵丽</td><td>女</td><td>多媒体技术</td></tr><tr><td>3001</td><td>王军</td><td>男</td><td>应用电子技术</td></tr><tr><td>4004</td><td>杨洋</td><td>男</td><td>楼宇智能化技术</td></tr><tr><td>5010</td><td>谢楠楠</td><td>女</td><td>计算机网络技术</td></tr></table>
-</div>
-
-<p>  题目：创建一个存储过程，并求出表中指定专业的学生人数。</p>
-<p>  这里提前准备了数据</p>
-</li>
+<li>add() 添加节点</li>
+<li>remove() 删除节点</li>
+<li>find() 查找节点</li>
+<li>insert() 插入节点</li>
+<li>update() 修改节点</li>
+<li>size() 返回链表长度</li>
+<li>show() 显示所有的节点</li>
 </ul>
-      
-        
-          <div class="button readmore">
-            <a href="/2019/05/13/2019-5-13-MySQL-procedure-function/" class="flat-box">
-              <i class="fas fa-book-open fa-fw" aria-hidden="true"></i>
-              阅读全文
-            </a>
-          </div>
-        
-      
-    </div>
-    <!-- 
-      <div class="full-width auto-padding tags">
-        
-          <a href="/tags/MySQL/" rel="nofollow"><i class="fas fa-tag fa-fw"></i> MySQL</a>
-        
-          <a href="/tags/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/" rel="nofollow"><i class="fas fa-tag fa-fw"></i> 学习记录</a>
-        
-      </div>
-     -->
-  </section>
-</article>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <article class="post white-box   reveal ">
-  
-
-
-  <section class='meta'>
-    
-    
-    <div class="meta" id="header-meta">
-      
-        
-  <h2 class="title">
-    <a href="/2019/05/11/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87Blog/">
-      我的第一篇Hexo Blog
-    </a>
-  </h2>
-
-
-      
-      <div class='new-meta-box'>
-        
-          
-        
-          
-            
-<div class='new-meta-item author'>
-  <a href="https://houyang99.github.io" rel="nofollow">
-    <img src="/img/headPortrait.jpg">
-    <p>清风揽月</p>
-  </a>
-</div>
-
-          
-        
-          
-            <div class="new-meta-item date">
-  <a class='notlink'>
-    <i class="fas fa-edit" aria-hidden="true"></i>
-    <p>发布于：2019年5月11日</p>
-  </a>
-</div>
-
-          
-        
-          
-            <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-02-14T19:22:16+08:00">
-  <a class='notlink'>
-    <i class="fas fa-save" aria-hidden="true"></i>
-    <p>更新于：2021年2月14日</p>
-  </a>
-</div>
-
-          
-        
-          
-            
-
-          
-        
-      </div>
-      
-        <hr>
-      
-    </div>
-  </section>
-
-
-  <section class="article typo">
-    <div class="article-entry" itemprop="articleBody">
-      <blockquote>
-<p>今天，第一次将Hexo搭建起来了并且部署到了 <a href="(https://github.com)" title="Github">Github</a> 上，当时的心情，无疑是非常激动的……</p>
+<h3 id="实现添加add"><a href="#实现添加add" class="headerlink" title="实现添加add()"></a>实现添加add()</h3><blockquote>
+<p>实现思路：如果根节点为null，则创建新的节点赋值给根节点，否则调用Node节点自己的add方法</p>
 </blockquote>
-<h2 id="第一章"><a href="#第一章" class="headerlink" title="第一章"></a>第一章</h2><hr>
-<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><hr>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">add(item) &#123;</span><br><span class="line">    <span class="keyword">if</span> (<span class="keyword">this</span>.head == <span class="literal">null</span>) &#123; <span class="comment">// 如果根节点没有数据，则创建根节点</span></span><br><span class="line">        <span class="keyword">this</span>.head = <span class="keyword">new</span> Node(item)</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="keyword">this</span>.head.add(item)	<span class="comment">// 如果根节点有数据，则条用根节点对象的add()方法</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">this</span>.length++</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-      
-    </div>
-    <!--  -->
-  </section>
-</article>
+<h3 id="remove-和-prev"><a href="#remove-和-prev" class="headerlink" title="remove() 和 prev()"></a>remove() 和 prev()</h3><blockquote>
+<p>实现思路：删除某个节点就等于将要删除的节点的前一个节点的next指向要删除的next</p>
+</blockquote>
+<p><img src="/2020/11/28/JavaScript%E5%AE%9E%E7%8E%B0%E4%B8%80%E4%B8%AA%E7%AE%80%E5%8D%95%E7%9A%84%E9%93%BE%E8%A1%A8/1.png" alt="img"></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 返回item的上一个Node节点</span></span><br><span class="line">prev(item) &#123;</span><br><span class="line">    <span class="keyword">let</span> prevNode = <span class="literal">null</span></span><br><span class="line">    <span class="keyword">let</span> currNode = <span class="keyword">this</span>.head</span><br><span class="line">    <span class="keyword">while</span>(currNode !== <span class="literal">null</span>) &#123;</span><br><span class="line">        <span class="keyword">if</span> (currNode.data === item) &#123;</span><br><span class="line">            <span class="keyword">break</span></span><br><span class="line">        &#125;</span><br><span class="line">        prevNode = currNode</span><br><span class="line">        currNode = currNode.next</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (currNode === <span class="literal">null</span>) &#123;</span><br><span class="line">        <span class="keyword">throw</span> <span class="keyword">new</span> <span class="built_in">Error</span>(<span class="string">'Not Found: '</span> + item)</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> prevNode</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 前一个节点的next指向要删除的next，实现删除！</span></span><br><span class="line">remove(item) &#123;</span><br><span class="line">    <span class="keyword">let</span> prevNode = <span class="keyword">this</span>.prev(item)</span><br><span class="line">    prevNode.next = item.next</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <article class="post white-box   reveal ">
-  
+<h3 id="find"><a href="#find" class="headerlink" title="find()"></a>find()</h3><blockquote>
+<p>由于已经实现了prev()，所以可以直接返回prev()返回的Node节点的next就可以了！</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">find(item) &#123;</span><br><span class="line">	<span class="keyword">return</span> <span class="keyword">this</span>.prev(item).next</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
+<h3 id="insert"><a href="#insert" class="headerlink" title="insert()"></a>insert()</h3><blockquote>
+<p>如何插入到指定No的之前？</p>
+<p>A B 两节点，将C插入到B之前，则可以将：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">C.next= B </span><br><span class="line">A.next = C</span><br></pre></td></tr></table></figure>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">insert(item, before) &#123;</span><br><span class="line">    <span class="keyword">let</span> prevNode = <span class="keyword">this</span>.prev(before)</span><br><span class="line">    <span class="keyword">let</span> newNode = <span class="keyword">new</span> Node(item)</span><br><span class="line">    newNode.next = prevNode.next</span><br><span class="line">    prevNode.next = newNode</span><br><span class="line">    <span class="keyword">this</span>.length++</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-  <section class='meta'>
-    
-    
-    <div class="meta" id="header-meta">
-      
-        
-  <h2 class="title">
-    <a href="/2019/05/09/MySQL-trigger/">
-      MySQL数据库-触发器小练习
-    </a>
-  </h2>
+<h3 id="update"><a href="#update" class="headerlink" title="update()"></a>update()</h3><blockquote>
+<p>只需要找到需要更新的节点，将节点的data赋值为新的数据即可</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">update(oldItem, newItem) &#123;</span><br><span class="line">	<span class="keyword">this</span>.find(oldItem).data = newItem</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
+<h3 id="size"><a href="#size" class="headerlink" title="size()"></a>size()</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">size() &#123;</span><br><span class="line">	<span class="keyword">return</span> <span class="keyword">this</span>.length</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-      
-      <div class='new-meta-box'>
-        
-          
-        
-          
-            
-<div class='new-meta-item author'>
-  <a href="https://houyang99.github.io" rel="nofollow">
-    <img src="/img/headPortrait.jpg">
-    <p>清风揽月</p>
-  </a>
-</div>
+<h3 id="show"><a href="#show" class="headerlink" title="show()"></a>show()</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">show() &#123;</span><br><span class="line">    <span class="keyword">let</span> currNode = <span class="keyword">this</span>.head</span><br><span class="line">    <span class="keyword">let</span> str = <span class="string">'[ '</span></span><br><span class="line">    <span class="keyword">while</span> (currNode) &#123;</span><br><span class="line">    str += currNode.data + <span class="string">' -&gt; '</span></span><br><span class="line">    currNode = currNode.next</span><br><span class="line">    &#125;</span><br><span class="line">    str += <span class="string">'null ]'</span></span><br><span class="line">    <span class="built_in">console</span>.log(str) </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-          
-        
-          
-            <div class="new-meta-item date">
-  <a class='notlink'>
-    <i class="fas fa-edit" aria-hidden="true"></i>
-    <p>发布于：2019年5月9日</p>
-  </a>
-</div>
+<h2 id="让我们来运行一下吧！"><a href="#让我们来运行一下吧！" class="headerlink" title="让我们来运行一下吧！"></a>让我们来运行一下吧！</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> list = <span class="keyword">new</span> Linked()</span><br><span class="line">list.add(<span class="string">'A'</span>)</span><br><span class="line">list.add(<span class="string">'B'</span>)</span><br><span class="line">list.add(<span class="string">'C'</span>)</span><br><span class="line">list.show()</span><br><span class="line">list.insert(<span class="string">'a'</span>, <span class="string">'B'</span>)</span><br><span class="line">list.show()</span><br><span class="line">list.update(<span class="string">'a'</span>,<span class="string">'Hello'</span>)</span><br><span class="line">list.show()</span><br><span class="line"><span class="built_in">console</span>.log(list.size())</span><br></pre></td></tr></table></figure>
 
-          
-        
-          
-            <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-02-14T19:22:16+08:00">
-  <a class='notlink'>
-    <i class="fas fa-save" aria-hidden="true"></i>
-    <p>更新于：2021年2月14日</p>
-  </a>
-</div>
+<blockquote>
+<p>结果：</p>
+</blockquote>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">PC:~/Desktop/js$ node Linked.js </span><br><span class="line">[ A -&gt; B -&gt; C -&gt; null ]</span><br><span class="line">[ A -&gt; a -&gt; B -&gt; C -&gt; null ]</span><br><span class="line">[ A -&gt; Hello -&gt; B -&gt; C -&gt; null ]</span><br><span class="line">4</span><br></pre></td></tr></table></figure>
 
-          
-        
-          
-            
+<h2 id="结束"><a href="#结束" class="headerlink" title="结束"></a>结束</h2><p>至此，一个简单的单向链表就完成了！</p>
 
-          
-        
-      </div>
-      
-        <hr>
-      
-    </div>
-  </section>
-
-
-  <section class="article typo">
-    <div class="article-entry" itemprop="articleBody">
-      <p>本周，数据库上到了触发器（已经上完了），于是老师想我们分享了他之前的一篇小论文，讲的是触发器在商城里的应用—利用触发器来模拟用户在进行下单、修改订单、退货操作之后相关商品信息的变化。</p>
-<hr>
-<p>首先，让我们来假设一下：现在我们有一些商品，如表</p>
-<table>
-<thead>
-<tr>
-<th align="center">商品编号（Product id）</th>
-<th align="center">商品名称（Product name）</th>
-<th align="center">数量（Number）</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">1</td>
-<td align="center">单反</td>
-<td align="center">30</td>
-</tr>
-<tr>
-<td align="center">2</td>
-<td align="center">自行车</td>
-<td align="center">20</td>
-</tr>
-<tr>
-<td align="center">3</td>
-<td align="center">笔记本</td>
-<td align="center">15</td>
-</tr>
-</tbody></table>
-<p>下面，就开始将结构在数据库中搭建起来吧！</p>
-      
-        
-          <div class="button readmore">
-            <a href="/2019/05/09/MySQL-trigger/" class="flat-box">
-              <i class="fas fa-book-open fa-fw" aria-hidden="true"></i>
-              阅读全文
-            </a>
-          </div>
-        
       
     </div>
     <!-- 
       <div class="full-width auto-padding tags">
         
-          <a href="/tags/MySQL/" rel="nofollow"><i class="fas fa-tag fa-fw"></i> MySQL</a>
-        
           <a href="/tags/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/" rel="nofollow"><i class="fas fa-tag fa-fw"></i> 学习记录</a>
+        
+          <a href="/tags/JavaScript/" rel="nofollow"><i class="fas fa-tag fa-fw"></i> JavaScript</a>
         
       </div>
      -->
