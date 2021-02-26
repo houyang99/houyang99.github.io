@@ -316,9 +316,112 @@
         
           
         
+          
+        
       
     
     
+      
+        
+          <div class='post-wrapper'>
+            <article class="post white-box   reveal ">
+  
+
+
+  <section class='meta'>
+    
+    
+    <div class="meta" id="header-meta">
+      
+        
+  <h2 class="title">
+    <a href="/2021/02/26/JS%E6%B7%B1%E6%8B%B7%E8%B4%9D/">
+      JS深拷贝
+    </a>
+  </h2>
+
+
+      
+      <div class='new-meta-box'>
+        
+          
+        
+          
+            
+<div class='new-meta-item author'>
+  <a href="https://houyang99.github.io" rel="nofollow">
+    <img src="/img/headPortrait.jpg">
+    <p>清风揽月</p>
+  </a>
+</div>
+
+          
+        
+          
+            <div class="new-meta-item date">
+  <a class='notlink'>
+    <i class="fas fa-edit" aria-hidden="true"></i>
+    <p>发布于：2021年2月26日</p>
+  </a>
+</div>
+
+          
+        
+          
+            <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-02-26T22:05:06+08:00">
+  <a class='notlink'>
+    <i class="fas fa-save" aria-hidden="true"></i>
+    <p>更新于：2021年2月26日</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+
+          
+        
+      </div>
+      
+        <hr>
+      
+    </div>
+  </section>
+
+
+  <section class="article typo">
+    <div class="article-entry" itemprop="articleBody">
+      <h2 id="什么是深拷贝？"><a href="#什么是深拷贝？" class="headerlink" title="什么是深拷贝？"></a>什么是深拷贝？</h2><blockquote>
+<p>在JavaScript中，数据类型有<strong>基本数据类型</strong>和<strong>引用数据类型</strong></p>
+<p>有时候会遇到将一个数组或者对象赋值给另一个变量，例如</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> arr1 = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]</span><br><span class="line"><span class="keyword">let</span> arr2 = arr1</span><br><span class="line"><span class="built_in">console</span>.log(arr2) <span class="comment">// [1, 2, 3]</span></span><br><span class="line">arr2[<span class="number">0</span>] = <span class="string">'hello'</span></span><br><span class="line"><span class="built_in">console</span>.log(arr1, arr2) <span class="comment">// ['hello', 2, 3] ['hello', 2, 3]</span></span><br></pre></td></tr></table></figure>
+
+<p>上面赋值操作中，arr1是一个数组，再将arr1赋值给arr2时，arr1和arr2都会将指向同一个数据，在改变arr2的值时，arr1也会同时发生改变，如何让arr1和arr2互补影响呢？</p>
+      
+        
+          <div class="button readmore">
+            <a href="/2021/02/26/JS%E6%B7%B1%E6%8B%B7%E8%B4%9D/" class="flat-box">
+              <i class="fas fa-book-open fa-fw" aria-hidden="true"></i>
+              阅读全文
+            </a>
+          </div>
+        
+      
+    </div>
+    <!-- 
+      <div class="full-width auto-padding tags">
+        
+          <a href="/tags/JavaScript/" rel="nofollow"><i class="fas fa-tag fa-fw"></i> JavaScript</a>
+        
+      </div>
+     -->
+  </section>
+</article>
+
+          </div>
+        
       
         
           <div class='post-wrapper'>
@@ -1289,130 +1392,6 @@
           </div>
         
       
-        
-          <div class='post-wrapper'>
-            <article class="post white-box   reveal ">
-  
-
-
-  <section class='meta'>
-    
-    
-    <div class="meta" id="header-meta">
-      
-        
-  <h2 class="title">
-    <a href="/2019/05/09/MySQL-trigger/">
-      MySQL数据库-触发器小练习
-    </a>
-  </h2>
-
-
-      
-      <div class='new-meta-box'>
-        
-          
-        
-          
-            
-<div class='new-meta-item author'>
-  <a href="https://houyang99.github.io" rel="nofollow">
-    <img src="/img/headPortrait.jpg">
-    <p>清风揽月</p>
-  </a>
-</div>
-
-          
-        
-          
-            <div class="new-meta-item date">
-  <a class='notlink'>
-    <i class="fas fa-edit" aria-hidden="true"></i>
-    <p>发布于：2019年5月9日</p>
-  </a>
-</div>
-
-          
-        
-          
-            <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-02-14T19:22:16+08:00">
-  <a class='notlink'>
-    <i class="fas fa-save" aria-hidden="true"></i>
-    <p>更新于：2021年2月14日</p>
-  </a>
-</div>
-
-          
-        
-          
-            
-
-          
-        
-      </div>
-      
-        <hr>
-      
-    </div>
-  </section>
-
-
-  <section class="article typo">
-    <div class="article-entry" itemprop="articleBody">
-      <p>本周，数据库上到了触发器（已经上完了），于是老师想我们分享了他之前的一篇小论文，讲的是触发器在商城里的应用—利用触发器来模拟用户在进行下单、修改订单、退货操作之后相关商品信息的变化。</p>
-<hr>
-<p>首先，让我们来假设一下：现在我们有一些商品，如表</p>
-<table>
-<thead>
-<tr>
-<th align="center">商品编号（Product id）</th>
-<th align="center">商品名称（Product name）</th>
-<th align="center">数量（Number）</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">1</td>
-<td align="center">单反</td>
-<td align="center">30</td>
-</tr>
-<tr>
-<td align="center">2</td>
-<td align="center">自行车</td>
-<td align="center">20</td>
-</tr>
-<tr>
-<td align="center">3</td>
-<td align="center">笔记本</td>
-<td align="center">15</td>
-</tr>
-</tbody></table>
-<p>下面，就开始将结构在数据库中搭建起来吧！</p>
-      
-        
-          <div class="button readmore">
-            <a href="/2019/05/09/MySQL-trigger/" class="flat-box">
-              <i class="fas fa-book-open fa-fw" aria-hidden="true"></i>
-              阅读全文
-            </a>
-          </div>
-        
-      
-    </div>
-    <!-- 
-      <div class="full-width auto-padding tags">
-        
-          <a href="/tags/MySQL/" rel="nofollow"><i class="fas fa-tag fa-fw"></i> MySQL</a>
-        
-          <a href="/tags/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/" rel="nofollow"><i class="fas fa-tag fa-fw"></i> 学习记录</a>
-        
-      </div>
-     -->
-  </section>
-</article>
-
-          </div>
-        
-      
     
   </section>
   
@@ -1616,7 +1595,7 @@
 
 
     <div class='content'>
-      <a href="/tags/Java/" style="font-size: 20.67px; color: #6c6c6c">Java</a> <a href="/tags/JavaScript/" style="font-size: 17.33px; color: #828282">JavaScript</a> <a href="/tags/Mooc/" style="font-size: 14px; color: #999">Mooc</a> <a href="/tags/MySQL/" style="font-size: 17.33px; color: #828282">MySQL</a> <a href="/tags/java/" style="font-size: 14px; color: #999">java</a> <a href="/tags/mooc/" style="font-size: 14px; color: #999">mooc</a> <a href="/tags/%E5%96%9C%E9%97%BB%E4%B9%90%E8%A7%81/" style="font-size: 14px; color: #999">喜闻乐见</a> <a href="/tags/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/" style="font-size: 24px; color: #555">学习记录</a> <a href="/tags/%E6%97%A5%E5%B8%B8%E6%B0%B4/" style="font-size: 14px; color: #999">日常水</a>
+      <a href="/tags/Java/" style="font-size: 21.5px; color: #666">Java</a> <a href="/tags/JavaScript/" style="font-size: 19px; color: #777">JavaScript</a> <a href="/tags/Mooc/" style="font-size: 14px; color: #999">Mooc</a> <a href="/tags/MySQL/" style="font-size: 16.5px; color: #888">MySQL</a> <a href="/tags/java/" style="font-size: 14px; color: #999">java</a> <a href="/tags/mooc/" style="font-size: 14px; color: #999">mooc</a> <a href="/tags/%E5%96%9C%E9%97%BB%E4%B9%90%E8%A7%81/" style="font-size: 14px; color: #999">喜闻乐见</a> <a href="/tags/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/" style="font-size: 24px; color: #555">学习记录</a> <a href="/tags/%E6%97%A5%E5%B8%B8%E6%B0%B4/" style="font-size: 14px; color: #999">日常水</a>
     </div>
   </section>
 
